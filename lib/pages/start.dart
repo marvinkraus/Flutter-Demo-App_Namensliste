@@ -3,9 +3,17 @@ import 'package:url_launcher/url_launcher.dart';
 
 import '../entitity/personen.dart';
 
-class StartPage extends StatelessWidget {
+class StartPage extends StatefulWidget {
   StartPage({Key? key}) : super(key: key);
 
+  @override
+  State<StatefulWidget> createState() {
+    return _StartPage();
+  }
+}
+
+//StatefulWidget für Veränderungen an den Pages
+class _StartPage extends State<StartPage> {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 // ohne Unterstrich = Public Variable
 // Mit Unterstrich = Private Variable
@@ -54,6 +62,7 @@ class StartPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    int indexSelected = -1;
     return Scaffold(
       backgroundColor: Color.fromARGB(255, 160, 156, 156),
       body: Padding(
@@ -67,6 +76,7 @@ class StartPage extends StatelessWidget {
                       return InkWell(
                           onTap: () {
                             print("AAAA");
+                            indexSelected = index;
                           },
                           child: ListTile(
                               leading: const Icon(Icons.person_pin_sharp),
@@ -77,9 +87,23 @@ class StartPage extends StatelessWidget {
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: const [
-                  ElevatedButton(onPressed: null, child: Text("add")),
-                  ElevatedButton(onPressed: null, child: Text("delete"))
+                children: [
+                  ElevatedButton(
+                      onPressed: () {
+                        personenNew.add(
+                            Person(name: "Timo", alter: 14, picture: "ha"));
+                        setState(() {});
+                      },
+                      child: Text("add")),
+                  ElevatedButton(
+                      onPressed: () {
+                        if (indexSelected == -1) {
+                          print("Fehler nichts ausgewählt");
+                        }
+                        personenNew.removeAt(indexSelected);
+                        setState(() {});
+                      },
+                      child: Text("delete"))
                 ],
               )
             ],
