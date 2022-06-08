@@ -1,0 +1,16 @@
+-------------------- Auto-Git Log --------------------
+		Wed Jun 08 2022 14:18:10 GMT+0200 (Mitteleuropäische Sommerzeit)
+------------------------------------------------------
+
+Modified files:
+* lib/pages/start.dart
+
+
+Created files:
+* lib/entitity/personen.dart
+
+
+Deleted files:
+
+
+Renamed files:

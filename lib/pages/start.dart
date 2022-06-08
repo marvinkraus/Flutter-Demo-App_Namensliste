@@ -59,12 +59,12 @@ class StartPage extends StatelessWidget {
             children: [
               Expanded(
                 child: ListView.builder(
-                    itemCount: personen.length,
+                    itemCount: personenNew.length,
                     itemBuilder: (BuildContext context, int index) {
                       return ListTile(
                           leading: const Icon(Icons.person_pin_sharp),
-                          title: Text(personen[index]),
-                          subtitle: const Text("32 Jahre alt"));
+                          title: Text(personenNew[index].name),
+                          subtitle: Text(personenNew[index].alter.toString()));
                     }),
               ),
               Row(
