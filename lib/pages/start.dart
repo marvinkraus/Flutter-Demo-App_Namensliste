@@ -12,6 +12,9 @@ class StartPage extends StatelessWidget {
 
   List<String> personen = ["Klaus", "Gabi", "Hans"];
   List<Person> personenNew = [
+    Person(name: "Klaus", alter: 12, picture: "Test"),
+    Person(name: "Klaus", alter: 12, picture: "Test"),
+    Person(name: "Klaus", alter: 12, picture: "Test"),
     Person(name: "Klaus", alter: 12, picture: "Test")
   ];
 
@@ -61,10 +64,15 @@ class StartPage extends StatelessWidget {
                 child: ListView.builder(
                     itemCount: personenNew.length,
                     itemBuilder: (BuildContext context, int index) {
-                      return ListTile(
-                          leading: const Icon(Icons.person_pin_sharp),
-                          title: Text(personenNew[index].name),
-                          subtitle: Text(personenNew[index].alter.toString()));
+                      return InkWell(
+                          onTap: () {
+                            print("AAAA");
+                          },
+                          child: ListTile(
+                              leading: const Icon(Icons.person_pin_sharp),
+                              title: Text(personenNew[index].name),
+                              subtitle:
+                                  Text(personenNew[index].alter.toString())));
                     }),
               ),
               Row(
