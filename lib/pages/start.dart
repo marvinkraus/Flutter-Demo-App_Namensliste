@@ -4,9 +4,14 @@ import 'package:url_launcher/url_launcher.dart';
 class StartPage extends StatelessWidget {
   StartPage({Key? key}) : super(key: key);
 
+////////////////////////////////////////////////////////////////////
+
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 // ohne Unterstrich = Public Variable
 // Mit Unterstrich = Private Variable
+
+  List<String> personen = ["Klaus", "Gabi", "Hans"];
+/////////////////////////////////////////////////////////////////////
 
   SnackBar mySnackBar() {
     return const SnackBar(
@@ -45,45 +50,30 @@ class StartPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 59, 24, 24),
+      backgroundColor: Color.fromARGB(255, 160, 156, 156),
       body: Padding(
-        padding: const EdgeInsets.all(5),
-        child: Center(
-          child: Container(
-            height: 256,
-            width: 256,
-            decoration: BoxDecoration(
-                border: Border.all(width: 3),
-                color: Color.fromARGB(173, 143, 141, 140)),
-            child: Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  InkWell(
-                    // sehr mächtiges Tool um Text anklickbar zu machen
-                    onTap: () {
-                      myDialog(context);
-                    },
-                    child: const Text("Ich will auch geklickt werden"),
-                  ),
-                  ElevatedButton(
-                      onPressed: () {
-                        print("Button wurde geklickt");
-                        ScaffoldMessenger.of(context)
-                            .showSnackBar(mySnackBar());
-                      },
-                      child: const Text("Klick mich")),
-                ],
+          padding: const EdgeInsets.all(5),
+          child: Column(
+            children: [
+              Expanded(
+                child: ListView.builder(
+                    itemCount: personen.length,
+                    itemBuilder: (BuildContext context, int index) {
+                      return ListTile(
+                          leading: const Icon(Icons.person_pin_sharp),
+                          title: Text(personen[index]),
+                          subtitle: const Text("32 Jahre alt"));
+                    }),
               ),
-            ),
-          ),
-        ),
-      ),
-      bottomNavigationBar: BottomNavigationBar(items: const [
-        BottomNavigationBarItem(label: "test", icon: Icon(Icons.audiotrack)),
-        BottomNavigationBarItem(label: "test", icon: Icon(Icons.work)),
-        BottomNavigationBarItem(label: "test", icon: Icon(Icons.video_label))
-      ]),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: const [
+                  ElevatedButton(onPressed: null, child: Text("add")),
+                  ElevatedButton(onPressed: null, child: Text("delete"))
+                ],
+              )
+            ],
+          )),
     );
   }
 }
