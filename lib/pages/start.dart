@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_demo/pages/addNewPerson.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../entitity/personen.dart';
@@ -90,8 +91,8 @@ class _StartPage extends State<StartPage> {
                 children: [
                   ElevatedButton(
                       onPressed: () {
-                        personenNew.add(
-                            Person(name: "Timo", alter: 14, picture: "ha"));
+                        //personenNew.add(
+                        //Person(name: "Timo", alter: 14, picture: "ha"));
                         setState(() {});
                       },
                       child: Text("add")),
