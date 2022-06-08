@@ -1,17 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import '../entitity/personen.dart';
+
 class StartPage extends StatelessWidget {
   StartPage({Key? key}) : super(key: key);
-
-////////////////////////////////////////////////////////////////////
 
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 // ohne Unterstrich = Public Variable
 // Mit Unterstrich = Private Variable
 
   List<String> personen = ["Klaus", "Gabi", "Hans"];
-/////////////////////////////////////////////////////////////////////
+  List<Person> personenNew = [
+    Person(name: "Klaus", alter: 12, picture: "Test")
+  ];
 
   SnackBar mySnackBar() {
     return const SnackBar(
