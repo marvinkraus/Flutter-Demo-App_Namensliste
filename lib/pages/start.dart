@@ -89,14 +89,19 @@ class _StartPage extends State<StartPage> {
                             }
                             setState(() {});
                           },
-                          child: ListTile(
-                              tileColor: indexSelected == index
-                                  ? Color.fromARGB(255, 86, 77, 167)
-                                  : Colors.transparent,
-                              leading: const Icon(Icons.person_pin_sharp),
-                              title: Text(personenListe[index].name),
-                              subtitle:
-                                  Text(personenListe[index].alter.toString())));
+                          child: Dismissible(
+                              key: Key(personenListe[index].name),
+                              onDismissed: (context) {
+                                personenListe.removeAt(index);
+                              },
+                              child: ListTile(
+                                  tileColor: indexSelected == index
+                                      ? Color.fromARGB(255, 86, 77, 167)
+                                      : Colors.transparent,
+                                  leading: const Icon(Icons.person_pin_sharp),
+                                  title: Text(personenListe[index].name),
+                                  subtitle: Text(
+                                      personenListe[index].alter.toString()))));
                     }),
               ),
               Row(
