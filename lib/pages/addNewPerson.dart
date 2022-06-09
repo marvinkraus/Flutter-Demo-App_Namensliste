@@ -6,8 +6,8 @@ import '../entitity/personen.dart';
 class addNewPersonPage extends StatelessWidget {
   addNewPersonPage({super.key});
 
-  late String
-      name; //late bedeutet dass zunächst kein Inhalt in Name gespeichert wird und das erst zur Laufzeit passiert
+  late String name;
+  //late bedeutet dass zunächst kein Inhalt in Name gespeichert wird und das erst zur Laufzeit passiert
 
   Widget build(BuildContext context) {
     return Scaffold(

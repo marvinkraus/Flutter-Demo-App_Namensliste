@@ -1,0 +1,16 @@
+-------------------- Auto-Git Log --------------------
+		Thu Jun 09 2022 08:40:54 GMT+0200 (Mitteleuropäische Sommerzeit)
+------------------------------------------------------
+
+Modified files:
+* lib/main.dart
+
+
+Created files:
+* lib/utils/router.dart
+
+
+Deleted files:
+
+
+Renamed files:

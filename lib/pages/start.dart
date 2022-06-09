@@ -91,10 +91,8 @@ class _StartPage extends State<StartPage> {
                 children: [
                   ElevatedButton(
                       onPressed: () async {
-                        Person p = await Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: ((context) => addNewPersonPage())));
+                        Person p = await Navigator.of(context)
+                            .pushNamed('/addNewPerson') as Person;
                         personenListe.add(p);
                         setState(() {});
                       },

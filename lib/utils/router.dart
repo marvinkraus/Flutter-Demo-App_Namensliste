@@ -1,5 +1,3 @@
-import 'dart:js';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_demo/pages/addNewPerson.dart';
 import 'package:flutter_demo/pages/start.dart';
@@ -15,7 +13,6 @@ class MyRouter {
       case '/addNewPerson': //interne URL also nicht entscheidend dass es gleich ist zum Namen der Page
         {
           return MaterialPageRoute(builder: (context) => addNewPersonPage());
-          ;
         }
       default:
         {
