@@ -38,7 +38,7 @@ class addNewPersonPage extends StatelessWidget {
           ElevatedButton(
               onPressed: (() {
                 if (name.isNotEmpty) {
-                  Person p = Person(name: name, alter: alter, picture: "");
+                  Person p = Person(name, alter, picture);
                   Navigator.of(context).pop(p);
                 }
               }),

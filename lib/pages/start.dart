@@ -19,13 +19,7 @@ class _StartPage extends State<StartPage> {
 // ohne Unterstrich = Public Variable
 // Mit Unterstrich = Private Variable
 
-  List<String> personen = ["Klaus", "Gabi", "Hans"];
-  List<Person> personenListe = [
-    Person(name: "Klaus", alter: 12, picture: "Test"),
-    Person(name: "Klaus", alter: 12, picture: "Test"),
-    Person(name: "Klaus", alter: 12, picture: "Test"),
-    Person(name: "Klaus", alter: 12, picture: "Test")
-  ];
+  List<Person> personenListe = [Person("a", 21, "")];
 
   SnackBar mySnackBar() {
     return const SnackBar(
@@ -61,11 +55,13 @@ class _StartPage extends State<StartPage> {
         });
   }
 
+  //Future<Person> fetchPerson() async {}
+
   int indexSelected = -1;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 160, 156, 156),
+      backgroundColor: Color.fromARGB(255, 255, 255, 255),
       body: Padding(
           padding: const EdgeInsets.all(5),
           child: Column(
@@ -85,7 +81,7 @@ class _StartPage extends State<StartPage> {
                           },
                           child: ListTile(
                               tileColor: indexSelected == index
-                                  ? Colors.red
+                                  ? Color.fromARGB(255, 86, 77, 167)
                                   : Colors.transparent,
                               leading: const Icon(Icons.person_pin_sharp),
                               title: Text(personenListe[index].name),
