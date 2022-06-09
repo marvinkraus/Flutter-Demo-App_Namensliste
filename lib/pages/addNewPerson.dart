@@ -26,7 +26,7 @@ class addNewPersonPage extends StatelessWidget {
                   Navigator.of(context).pop(p);
                 }
               }),
-              child: const Text("okay add Person"))
+              child: const Text("Add Person"))
         ]),
       ),
     );
