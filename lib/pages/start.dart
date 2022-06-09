@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_demo/pages/addNewPerson.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'package:http/http.dart' as http;
 
 import '../entitity/personen.dart';
 
@@ -55,7 +55,13 @@ class _StartPage extends State<StartPage> {
         });
   }
 
-  //Future<Person> fetchPerson() async {}
+  Future<Person> fetchPerson() async {
+
+    http.get(url)
+
+
+
+  }
 
   int indexSelected = -1;
   @override
