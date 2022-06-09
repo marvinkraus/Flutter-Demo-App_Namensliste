@@ -20,7 +20,7 @@ class _StartPage extends State<StartPage> {
 // Mit Unterstrich = Private Variable
 
   List<String> personen = ["Klaus", "Gabi", "Hans"];
-  List<Person> personenNew = [
+  List<Person> personenListe = [
     Person(name: "Klaus", alter: 12, picture: "Test"),
     Person(name: "Klaus", alter: 12, picture: "Test"),
     Person(name: "Klaus", alter: 12, picture: "Test"),
@@ -72,7 +72,7 @@ class _StartPage extends State<StartPage> {
             children: [
               Expanded(
                 child: ListView.builder(
-                    itemCount: personenNew.length,
+                    itemCount: personenListe.length,
                     itemBuilder: (BuildContext context, int index) {
                       return InkWell(
                           onTap: () {
@@ -81,33 +81,33 @@ class _StartPage extends State<StartPage> {
                           },
                           child: ListTile(
                               leading: const Icon(Icons.person_pin_sharp),
-                              title: Text(personenNew[index].name),
+                              title: Text(personenListe[index].name),
                               subtitle:
-                                  Text(personenNew[index].alter.toString())));
+                                  Text(personenListe[index].alter.toString())));
                     }),
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   ElevatedButton(
-                      onPressed: () {
-                        Navigator.push(
+                      onPressed: () async {
+                        Person p = await Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: ((context) =>
-                                    const addNewPersonPage())));
+                                builder: ((context) => addNewPersonPage())));
+                        personenListe.add(p);
                         setState(() {});
                       },
-                      child: Text("add")),
+                      child: const Text("add")),
                   ElevatedButton(
                       onPressed: () {
                         if (indexSelected == -1) {
                           print("Fehler nichts ausgewählt");
                         }
-                        personenNew.removeAt(indexSelected);
+                        personenListe.removeAt(indexSelected);
                         setState(() {});
                       },
-                      child: Text("delete"))
+                      child: const Text("delete"))
                 ],
               )
             ],

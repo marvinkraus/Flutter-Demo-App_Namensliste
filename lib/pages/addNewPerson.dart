@@ -21,10 +21,12 @@ class addNewPersonPage extends StatelessWidget {
           ),
           ElevatedButton(
               onPressed: (() {
-                Person p = Person(name: name, alter: 11, picture: "");
-                Navigator.of(context).pop();
+                if (name.isNotEmpty) {
+                  Person p = Person(name: name, alter: 11, picture: "");
+                  Navigator.of(context).pop(p);
+                }
               }),
-              child: Text("okay add Person"))
+              child: const Text("okay add Person"))
         ]),
       ),
     );
