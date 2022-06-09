@@ -91,8 +91,11 @@ class _StartPage extends State<StartPage> {
                 children: [
                   ElevatedButton(
                       onPressed: () {
-                        //personenNew.add(
-                        //Person(name: "Timo", alter: 14, picture: "ha"));
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: ((context) =>
+                                    const addNewPersonPage())));
                         setState(() {});
                       },
                       child: Text("add")),
