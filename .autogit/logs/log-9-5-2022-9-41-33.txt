@@ -1,0 +1,16 @@
+-------------------- Auto-Git Log --------------------
+		Thu Jun 09 2022 09:41:33 GMT+0200 (Mitteleuropäische Sommerzeit)
+------------------------------------------------------
+
+Modified files:
+* lib/pages/addNewPerson.dart
+
+
+Created files:
+* .autogit/logs/log-9-5-2022-9-11-14.txt
+
+
+Deleted files:
+
+
+Renamed files:
