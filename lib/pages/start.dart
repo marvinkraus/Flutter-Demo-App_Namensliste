@@ -61,9 +61,9 @@ class _StartPage extends State<StartPage> {
         });
   }
 
+  int indexSelected = -1;
   @override
   Widget build(BuildContext context) {
-    int indexSelected = -1;
     return Scaffold(
       backgroundColor: Color.fromARGB(255, 160, 156, 156),
       body: Padding(
@@ -76,10 +76,17 @@ class _StartPage extends State<StartPage> {
                     itemBuilder: (BuildContext context, int index) {
                       return InkWell(
                           onTap: () {
-                            print("AAAA");
-                            indexSelected = index;
+                            if (indexSelected != index) {
+                              indexSelected = index;
+                            } else {
+                              indexSelected = -1;
+                            }
+                            setState(() {});
                           },
                           child: ListTile(
+                              tileColor: indexSelected == index
+                                  ? Colors.red
+                                  : Colors.transparent,
                               leading: const Icon(Icons.person_pin_sharp),
                               title: Text(personenListe[index].name),
                               subtitle:
@@ -105,7 +112,7 @@ class _StartPage extends State<StartPage> {
                         personenListe.removeAt(indexSelected);
                         setState(() {});
                       },
-                      child: const Text("delete"))
+                      child: const Text("delete")),
                 ],
               )
             ],
