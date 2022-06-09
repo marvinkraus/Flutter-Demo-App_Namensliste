@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_demo/pages/addNewPerson.dart';
@@ -96,9 +97,13 @@ class _StartPage extends State<StartPage> {
                               },
                               child: ListTile(
                                   tileColor: indexSelected == index
-                                      ? Color.fromARGB(255, 86, 77, 167)
+                                      ? const Color.fromARGB(255, 65, 138, 87)
                                       : Colors.transparent,
-                                  leading: const Icon(Icons.person_pin_sharp),
+                                  leading:
+                                      personenListe[index].picture.isNotEmpty
+                                          ? Image.network(
+                                              personenListe[index].picture)
+                                          : const Icon(Icons.person_pin_sharp),
                                   title: Text(personenListe[index].name),
                                   subtitle: Text(
                                       personenListe[index].alter.toString()))));
