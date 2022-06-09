@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_demo/pages/addNewPerson.dart';
 import 'package:http/http.dart' as http;
@@ -55,12 +57,14 @@ class _StartPage extends State<StartPage> {
         });
   }
 
-  Future<Person> fetchPerson() async {
-
-    http.get(url)
-
-
-
+  Future<Person?> fetchPerson() async {
+    http.Response response = await http
+        .get(Uri.parse("https://randomname.de/?format=json&count=1&images=1"));
+    if (response.statusCode == 200) {
+      //Abfrage ob alles ok ist
+      return Future.value(Person.fromJson(response.body));
+    }
+    return Future.value(null);
   }
 
   int indexSelected = -1;
@@ -115,6 +119,15 @@ class _StartPage extends State<StartPage> {
                         setState(() {});
                       },
                       child: const Text("delete")),
+                  ElevatedButton(
+                      onPressed: () async {
+                        Person? p = await fetchPerson();
+                        if (p != null) {
+                          personenListe.add(p);
+                          setState(() {});
+                        }
+                      },
+                      child: const Text("Fetch"))
                 ],
               )
             ],

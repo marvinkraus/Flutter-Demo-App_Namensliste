@@ -17,7 +17,7 @@ class Person {
   }
 
   static Person fromJson(String json) {
-    Map<String, dynamic> map = jsonDecode(json);
+    Map<String, dynamic> map = jsonDecode(json)[0];
     return Person(
         "${map['firstname']} ${map['lastname']}", map['age'], map['image']);
   }
