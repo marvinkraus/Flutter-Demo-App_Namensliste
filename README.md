@@ -1,6 +1,6 @@
 # **flutter_demo Namensliste**
 
-***A new Flutter project***.
+***Flutter Project from seminar week Dart and Flutter***.
 
 ## Getting Started
 
