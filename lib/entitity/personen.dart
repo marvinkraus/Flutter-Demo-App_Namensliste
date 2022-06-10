@@ -21,4 +21,9 @@ class Person {
     return Person(
         "${map['firstname']} ${map['lastname']}", map['age'], map['image']);
   }
+
+  static Person fromSingleJson(String json) {
+    Map<String, dynamic> map = jsonDecode(json)[0];
+    return Person(map['name'], map['age'], map['image']);
+  }
 }

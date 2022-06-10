@@ -1,0 +1,16 @@
+-------------------- Auto-Git Log --------------------
+		Fri Jun 10 2022 09:11:24 GMT+0200 (Mitteleuropäische Sommerzeit)
+------------------------------------------------------
+
+Modified files:
+* pubspec.yaml
+
+
+Created files:
+* lib/utils/sharedPreferences.dart
+
+
+Deleted files:
+
+
+Renamed files:

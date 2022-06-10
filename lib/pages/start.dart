@@ -4,7 +4,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_demo/pages/addNewPerson.dart';
 import 'package:http/http.dart' as http;
-
+import 'package:shared_preferences/shared_preferences.dart';
 import '../entitity/personen.dart';
 
 class StartPage extends StatefulWidget {
@@ -143,5 +143,13 @@ class _StartPage extends State<StartPage> {
             ],
           )),
     );
+  }
+
+  saveJsonString() async {
+    final prefs = await SharedPreferences.getInstance();
+  }
+
+  readJsonString() async {
+    final prefs = await SharedPreferences.getInstance();
   }
 }
