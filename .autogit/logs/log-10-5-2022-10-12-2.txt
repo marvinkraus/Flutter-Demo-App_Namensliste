@@ -1,0 +1,22 @@
+-------------------- Auto-Git Log --------------------
+		Fri Jun 10 2022 10:12:02 GMT+0200 (Mitteleuropäische Sommerzeit)
+------------------------------------------------------
+
+Modified files:
+* lib/pages/start.dart
+* macos/Flutter/GeneratedPluginRegistrant.swift
+* pubspec.lock
+* pubspec.yaml
+* windows/flutter/generated_plugin_registrant.cc
+* windows/flutter/generated_plugins.cmake
+
+
+Created files:
+* .autogit/logs/log-10-5-2022-9-41-42.txt
+* lib/utils/networking.dart
+
+
+Deleted files:
+
+
+Renamed files:

@@ -11,8 +11,11 @@ class Networking {
       } else {
         isAvailable = false;
       }
-
       print("isAvailable: $isAvailable");
     });
+  }
+
+  static register(Function callback) {
+    Connectivity().onConnectivityChanged.listen((result) => {callback()});
   }
 }

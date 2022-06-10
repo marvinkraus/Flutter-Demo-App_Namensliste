@@ -31,6 +31,16 @@ class _StartPage extends State<StartPage> {
 // ohne Unterstrich = Public Variable
 // Mit Unterstrich = Private Variable
 
+  updateUI() {
+    setState(() {});
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    Networking.register(updateUI);
+  }
+
   List<Person> personenListe = [Person("a", 21, "")];
 
   SnackBar mySnackBar() {
