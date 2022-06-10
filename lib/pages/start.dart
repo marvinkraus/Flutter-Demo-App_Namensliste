@@ -9,13 +9,6 @@ import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
 import '../entitity/personen.dart';
 
-void main() {
-  WidgetsFlutterBinding
-      .ensureInitialized(); //erst wenn es fertig geladen ist soll die App initialisiert werden
-  Networking.init();
-  runApp(const App());
-}
-
 class StartPage extends StatefulWidget {
   StartPage({Key? key}) : super(key: key);
 

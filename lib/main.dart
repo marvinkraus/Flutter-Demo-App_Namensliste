@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_demo/pages/start.dart';
+import 'package:flutter_demo/utils/networking.dart';
 import 'package:flutter_demo/utils/router.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  Networking.init();
   runApp(const App());
 }
 
