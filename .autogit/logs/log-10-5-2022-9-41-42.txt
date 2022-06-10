@@ -1,0 +1,18 @@
+-------------------- Auto-Git Log --------------------
+		Fri Jun 10 2022 09:41:42 GMT+0200 (Mitteleuropäische Sommerzeit)
+------------------------------------------------------
+
+Modified files:
+* lib/entitity/personen.dart
+* lib/pages/start.dart
+
+
+Created files:
+* .autogit/logs/log-10-5-2022-9-11-24.txt
+
+
+Deleted files:
+* lib/utils/sharedPreferences.dart
+
+
+Renamed files:

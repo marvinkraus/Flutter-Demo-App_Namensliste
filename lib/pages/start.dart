@@ -2,10 +2,19 @@ import 'dart:convert';
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_demo/main.dart';
 import 'package:flutter_demo/pages/addNewPerson.dart';
+import 'package:flutter_demo/utils/networking.dart';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
 import '../entitity/personen.dart';
+
+void main() {
+  WidgetsFlutterBinding
+      .ensureInitialized(); //erst wenn es fertig geladen ist soll die App initialisiert werden
+  Networking.init();
+  runApp(const App());
+}
 
 class StartPage extends StatefulWidget {
   StartPage({Key? key}) : super(key: key);
@@ -130,13 +139,15 @@ class _StartPage extends State<StartPage> {
                       },
                       child: const Text("delete")),
                   ElevatedButton(
-                      onPressed: () async {
-                        Person? p = await fetchPerson();
-                        if (p != null) {
-                          personenListe.add(p);
-                          setState(() {});
-                        }
-                      },
+                      onPressed: Networking.isAvailable
+                          ? () async {
+                              Person? p = await fetchPerson();
+                              if (p != null) {
+                                personenListe.add(p);
+                                setState(() {});
+                              }
+                            }
+                          : null,
                       child: const Text("Fetch"))
                 ],
               )
